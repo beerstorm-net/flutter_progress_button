@@ -10,13 +10,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(),
-      home: HomePage(),
+      home: HomePage(key: UniqueKey()),
     );
   }
 }
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
+  HomePage({required Key key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -61,18 +61,27 @@ class _HomePageState extends State<HomePage> {
                 defaultWidget: const Text('btn 1'),
                 width: 114,
                 onPressed: () {},
+                key: UniqueKey(), progressWidget: const CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white)),
+                color: Colors.blue,
               ),
               ProgressButton(
                 defaultWidget: const Text('btn 2'),
                 width: 114,
                 type: ProgressButtonType.Flat,
                 onPressed: () {},
+                key: UniqueKey(), progressWidget: const CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white)),
+                color: Colors.blue,
               ),
               ProgressButton(
                 defaultWidget: const Text('btn 3'),
                 width: 114,
                 type: ProgressButtonType.Outline,
                 onPressed: () {},
+                key: UniqueKey(), progressWidget: const CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white)),
+                color: Colors.blue,
               ),
             ],
           ),
@@ -100,6 +109,7 @@ class _HomePageState extends State<HomePage> {
                     // So that user won't missed out the reverse animation.
                   };
                 },
+                key: UniqueKey(),
               ),
               ProgressButton(
                 defaultWidget:
@@ -112,6 +122,7 @@ class _HomePageState extends State<HomePage> {
                   int score = await Future.delayed(
                       const Duration(milliseconds: 4000), () => 42);
                 },
+                key: UniqueKey(), color: Colors.blue,
               ),
               ProgressButton(
                 defaultWidget:
@@ -124,6 +135,7 @@ class _HomePageState extends State<HomePage> {
                   int score = await Future.delayed(
                       const Duration(milliseconds: 4000), () => 42);
                 },
+                key: UniqueKey(), color: Colors.blue,
               ),
             ],
           ),
@@ -143,6 +155,7 @@ class _HomePageState extends State<HomePage> {
                   int score = await Future.delayed(
                       const Duration(milliseconds: 4000), () => 42);
                 },
+                key: UniqueKey(),
               ),
               ProgressButton(
                 defaultWidget:
@@ -156,6 +169,7 @@ class _HomePageState extends State<HomePage> {
                   int score = await Future.delayed(
                       const Duration(milliseconds: 4000), () => 42);
                 },
+                key: UniqueKey(), color: Colors.blue,
               ),
               ProgressButton(
                 defaultWidget:
@@ -169,6 +183,7 @@ class _HomePageState extends State<HomePage> {
                   int score = await Future.delayed(
                       const Duration(milliseconds: 4000), () => 42);
                 },
+                key: UniqueKey(), color: Colors.blue,
               ),
             ],
           ),
@@ -190,6 +205,7 @@ class _HomePageState extends State<HomePage> {
                   int score = await Future.delayed(
                       const Duration(milliseconds: 4000), () => 42);
                 },
+                key: UniqueKey(),
               ),
               ProgressButton(
                 defaultWidget:
@@ -204,6 +220,7 @@ class _HomePageState extends State<HomePage> {
                   int score = await Future.delayed(
                       const Duration(milliseconds: 4000), () => 42);
                 },
+                key: UniqueKey(), color: Colors.blue,
               ),
               ProgressButton(
                 defaultWidget:
@@ -218,6 +235,7 @@ class _HomePageState extends State<HomePage> {
                   int score = await Future.delayed(
                       const Duration(milliseconds: 4000), () => 42);
                 },
+                key: UniqueKey(), color: Colors.blue,
               ),
             ],
           ),
@@ -240,6 +258,7 @@ class _HomePageState extends State<HomePage> {
                   int score = await Future.delayed(
                       const Duration(milliseconds: 4000), () => 42);
                 },
+                key: UniqueKey(),
               ),
               ProgressButton(
                 defaultWidget:
@@ -255,6 +274,7 @@ class _HomePageState extends State<HomePage> {
                   int score = await Future.delayed(
                       const Duration(milliseconds: 4000), () => 42);
                 },
+                key: UniqueKey(), color: Colors.blue,
               ),
               ProgressButton(
                 defaultWidget:
@@ -270,6 +290,7 @@ class _HomePageState extends State<HomePage> {
                   int score = await Future.delayed(
                       const Duration(milliseconds: 4000), () => 42);
                 },
+                key: UniqueKey(), color: Colors.blue,
               ),
             ],
           ),
@@ -280,7 +301,7 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               ProgressButton(
                 defaultWidget: const Icon(Icons.clear, color: Colors.red),
-                progressWidget: ThreeSizeDot(),
+                progressWidget: ThreeSizeDot(key: UniqueKey(), color_1: Colors.red, color_2: Colors.red, color_3: Colors.red,),
                 color: Colors.black54,
                 width: 114,
                 height: 48,
@@ -290,13 +311,14 @@ class _HomePageState extends State<HomePage> {
                   int score = await Future.delayed(
                       const Duration(milliseconds: 4000), () => 42);
                 },
+                key: UniqueKey(),
               ),
               ProgressButton(
                 defaultWidget: const Icon(Icons.clear, color: Colors.red),
                 progressWidget: ThreeSizeDot(
                   color_1: Colors.black54,
                   color_2: Colors.black54,
-                  color_3: Colors.black54,
+                  color_3: Colors.black54, key: UniqueKey(),
                 ),
                 width: 114,
                 height: 48,
@@ -307,13 +329,14 @@ class _HomePageState extends State<HomePage> {
                   int score = await Future.delayed(
                       const Duration(milliseconds: 4000), () => 42);
                 },
+                key: UniqueKey(), color: Colors.black54,
               ),
               ProgressButton(
                 defaultWidget: const Icon(Icons.clear, color: Colors.red),
                 progressWidget: ThreeSizeDot(
                   color_1: Colors.black54,
                   color_2: Colors.black54,
-                  color_3: Colors.black54,
+                  color_3: Colors.black54, key: UniqueKey(),
                 ),
                 width: 114,
                 height: 48,
@@ -324,6 +347,7 @@ class _HomePageState extends State<HomePage> {
                   int score = await Future.delayed(
                       const Duration(milliseconds: 4000), () => 42);
                 },
+                key: UniqueKey(), color: Colors.black54,
               ),
             ],
           ),
@@ -338,13 +362,13 @@ class _HomePageState extends State<HomePage> {
 
 class ThreeSizeDot extends StatefulWidget {
   ThreeSizeDot(
-      {Key key,
+      {required Key key,
       this.shape = BoxShape.circle,
       this.duration = const Duration(milliseconds: 1000),
       this.size = 8.0,
-      this.color_1,
-      this.color_2,
-      this.color_3,
+      required this.color_1,
+      required this.color_2,
+      required this.color_3,
       this.padding = const EdgeInsets.all(2)})
       : super(key: key);
 
@@ -362,10 +386,10 @@ class ThreeSizeDot extends StatefulWidget {
 
 class _ThreeSizeDotState extends State<ThreeSizeDot>
     with SingleTickerProviderStateMixin {
-  AnimationController animationController;
-  Animation<double> animation_1;
-  Animation<double> animation_2;
-  Animation<double> animation_3;
+  late AnimationController animationController;
+  late Animation<double> animation_1;
+  late Animation<double> animation_2;
+  late Animation<double> animation_3;
 
   @override
   void initState() {
@@ -401,7 +425,8 @@ class _ThreeSizeDotState extends State<ThreeSizeDot>
                 shape: widget.shape,
                 size: widget.size,
                 color:
-                    widget.color_1 ?? Theme.of(context).colorScheme.onPrimary,
+                    widget.color_1,
+                key: UniqueKey(),
               ),
             ),
           ),
@@ -413,7 +438,8 @@ class _ThreeSizeDotState extends State<ThreeSizeDot>
                 shape: widget.shape,
                 size: widget.size,
                 color:
-                    widget.color_2 ?? Theme.of(context).colorScheme.onPrimary,
+                    widget.color_2,
+                key: UniqueKey(),
               ),
             ),
           ),
@@ -425,7 +451,8 @@ class _ThreeSizeDotState extends State<ThreeSizeDot>
                 shape: widget.shape,
                 size: widget.size,
                 color:
-                    widget.color_3 ?? Theme.of(context).colorScheme.onPrimary,
+                    widget.color_3,
+                key: UniqueKey(),
               ),
             ),
           ),
@@ -441,10 +468,10 @@ class Dot extends StatelessWidget {
   final Color color;
 
   Dot({
-    Key key,
-    this.shape,
-    this.size,
-    this.color,
+    required Key key,
+    required this.shape,
+    required this.size,
+    required this.color,
   }) : super(key: key);
 
   @override
@@ -461,9 +488,9 @@ class Dot extends StatelessWidget {
 
 class DelayTween extends Tween<double> {
   DelayTween({
-    double begin,
-    double end,
-    this.delay,
+    required double begin,
+    required double end,
+    required this.delay,
   }) : super(begin: begin, end: end);
 
   final double delay;
